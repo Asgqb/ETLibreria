@@ -15,18 +15,19 @@ public class Hub {
         }
         return resultado;
     }
+
     String apilar(Contenedor c1){
-        String noesta="si";
+        String noesta=null;
         if (c1.prioridad==1){
             for (int i=0;i<posiciones.length;i++){
-                if (posiciones[i][0]==null){ posiciones[i][0]=c1;noesta=null;}
+                if (posiciones[i][0]==null){ posiciones[i][0]=c1;noesta="si";}
 
             }
 
         }
         if (c1.prioridad==2){
             for (int i=0;i<posiciones.length;i++){
-                if (posiciones[i][1]==null){ posiciones[i][1]=c1;noesta=null;}
+                if (posiciones[i][1]==null){ posiciones[i][1]=c1;noesta="si";}
 
             }
 
@@ -34,7 +35,7 @@ public class Hub {
         if (c1.prioridad==3){
             for (int i=0;i<posiciones.length;i++){
                 for (int e=2;e<posiciones[0].length;e++){
-                    if (posiciones[i][e]==null){posiciones[i][e]=c1;noesta=null;}
+                    if (posiciones[i][e]==null){posiciones[i][e]=c1;noesta="si";}
                 }
             }
         }
