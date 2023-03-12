@@ -2,8 +2,11 @@ package com.company;
 
 public class Puerto {
     Hub[] puerto;
-    Puerto(){
+    Puerto(Hub h1,Hub h2,Hub h3){
         puerto=new Hub[3];
+        puerto[0]=h1;
+        puerto[1]=h2;
+        puerto[2]=h3;
     }
     void apilarContenedor(Contenedor c1){
         String resultado;

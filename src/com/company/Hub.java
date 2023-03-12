@@ -6,37 +6,41 @@ public class Hub {
         posiciones= new Contenedor[10][12];
     }
     @Override public String toString(){
-        String resultado=null;
+        String resultado="El Hub:\n";
         for (int i=0;i<posiciones.length;i++){
             for (int e=0;e<posiciones[0].length;e++){
-                resultado=resultado+("["+posiciones[i][e].id+"] ");
+                if (posiciones[i][e]==null) {resultado=resultado+("[vacío] ");}
+                else {resultado=resultado+("["+posiciones[i][e].id+"] ");}
             }
             resultado=resultado+"\n"; //\n para que un String salte de linea
         }
         return resultado;
     }
 
-    String apilar(Contenedor c1){
+     String apilar(Contenedor c1){
         String noesta=null;
         if (c1.prioridad==1){
             for (int i=0;i<posiciones.length;i++){
-                if (posiciones[i][0]==null){ posiciones[i][0]=c1;noesta="si";}
+                if (posiciones[i][0]==null){ posiciones[i][0]=c1;noesta="si";break;}
 
             }
+
 
         }
         if (c1.prioridad==2){
             for (int i=0;i<posiciones.length;i++){
-                if (posiciones[i][1]==null){ posiciones[i][1]=c1;noesta="si";}
+                if (posiciones[i][1]==null){ posiciones[i][1]=c1;noesta="si";break;}
 
             }
 
         }
         if (c1.prioridad==3){
+            int salir=0;;
             for (int i=0;i<posiciones.length;i++){
                 for (int e=2;e<posiciones[0].length;e++){
-                    if (posiciones[i][e]==null){posiciones[i][e]=c1;noesta="si";}
+                    if (posiciones[i][e]==null){posiciones[i][e]=c1;noesta="si";salir=1;break;}
                 }
+                if (salir==1) break;
             }
         }
         return noesta;

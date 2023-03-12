@@ -15,9 +15,9 @@ public class Contenedor {
         this.pais=pais;
         this.inspeccionado=inspeccionado;
         this.prioridad=prioridad;
-        this.descripcion=descripcion.substring(0,100); //Método substring para limitar tamaño cadena
-        this.empresaemisora=empresaemisora.substring(0,20);
-        this.empresaremitente=empresaremitente.substring(0,20);
+        this.descripcion=descripcion; //Método substring para limitar tamaño cadena
+        this.empresaemisora=empresaemisora;
+        this.empresaremitente=empresaremitente;
     }
 
     void setId(int id){
@@ -36,13 +36,13 @@ public class Contenedor {
         this.prioridad=prioridad;
     }
     void setDescripcion(String descripcion){
-        this.descripcion=descripcion.substring(0,100);
+        this.descripcion=descripcion;
     }
     void setEmpresaemisora(String empresaemisora){
-        this.empresaremitente=empresaemisora.substring(0,20);
+        this.empresaremitente=empresaemisora;
     }
     void setEmpresaremitente(String empresaremitente){
-        this.empresaremitente=empresaremitente.substring(0,20);
+        this.empresaremitente=empresaremitente;
     }
 
 
