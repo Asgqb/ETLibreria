@@ -42,5 +42,13 @@ public class Hub {
         return noesta;
     }
 
+    void desapilar(int columna){
+        for (int i=posiciones.length;i>0;i--){
+            if (posiciones[i-1][columna-1]==null){}
+            else{ posiciones[i-1][columna-1]=null;break;}
+            if (i==1) System.out.println("No hay más contenedores que desapilar en esta columna");
+        }
+    }
+
 
 }
