@@ -55,6 +55,43 @@ public class Hub {
             if (i==1) System.out.println("No hay más contenedores que desapilar en esta columna");
         }
     }
+    void mostrar(Contenedor c1){
+        String correcto="no";
+        for (int i=0;i<posiciones.length;i++){
+            for (int e=0;e<posiciones[0].length;e++) {
+                if(posiciones[i][e]==null){}
+                else if(posiciones[i][e].id==c1.id){
 
+                    System.out.println("Su numero de identificación es "+posiciones[i][e].id);
+                    System.out.println("Su peso son: "+posiciones[i][e].peso+" toneladas");
+                    System.out.println("Es del país: "+posiciones[i][e].pais);
+                    if (posiciones[i][e].inspeccionado==true) System.out.println("Ha sido inspeccionado");
+                    else System.out.println("No ha sido inspeccionado");
+                    System.out.println("Tiene nivel de prioridad "+posiciones[i][e].prioridad);
+                    System.out.println("Despcripción: "+posiciones[i][e].descripcion);
+                    System.out.println("La empresa emisora es "+posiciones[i][e].empresaemisora);
+                    System.out.println("La empresa remitente es "+posiciones[i][e].empresaremitente);
+                    correcto=null;
 
+                }
+                    if (correcto==null)break;
+                }
+                    if (correcto==null)break;
+            }
+
+    }
+
+    int cantidadPais(String pais) {
+        int pais2=0;
+        for (int i = 0; i < posiciones.length; i++) {
+            for (int e = 0; e < posiciones[0].length; e++) {
+                if (posiciones[i][e] == null) {}
+                else if (posiciones[i][e].pais.equals(pais)) {
+                   pais2=pais2+1;
+
+                }
+            }
+        }
+        return pais2;
+    }
 }
