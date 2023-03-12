@@ -9,11 +9,13 @@ public class Main {
 
         Hub h1=new Hub();
         h1.apilar(c1);
-    h1.apilar(c1);
-    h1.apilar(c2);
-    h1.apilar(c3);
-    String cadena= h1.toString();
+        h1.apilar(c1);
+        h1.apilar(c2);
+        h1.apilar(c3);
+        String cadena= h1.toString();
         System.out.println(cadena);
-
+        h1.desapilar(3);
+        cadena= h1.toString();
+        System.out.println(cadena);
     }
 }
