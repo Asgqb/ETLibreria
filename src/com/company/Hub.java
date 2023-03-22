@@ -65,8 +65,8 @@ public class Hub {
         int pais2=0;
         for (int i = 0; i < posiciones.length; i++) {
             for (int e = 0; e < posiciones[0].length; e++) {
-                if (posiciones[i][e] == null) {}
-                else if (posiciones[i][e].pais.equals(pais)) {
+                if (posiciones[i][e] != null && posiciones[i][e].pais.equals(pais)) {
+
                    pais2=pais2+1;
 
                 }
