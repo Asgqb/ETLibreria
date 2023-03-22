@@ -9,7 +9,7 @@ public class Main {
         Hub h1=new Hub();
         Hub h2=new Hub();
         Hub h3=new Hub();
-        Puerto p1=new Puerto(h1,h2,h3);
+        Puerto p1=new Puerto();
 
         h1.apilar(c1);
         h1.apilar(c1);

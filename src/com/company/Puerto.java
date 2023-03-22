@@ -1,24 +1,26 @@
 package com.company;
 
 public class Puerto {
+    boolean[] ocupado;
     Hub[] puerto;
-    Puerto(Hub h1,Hub h2,Hub h3){
+    Puerto(){
         puerto=new Hub[3];
-        puerto[0]=h1;
-        puerto[1]=h2;
-        puerto[2]=h3;
+        puerto[0]=new Hub();
+        puerto[1]=new Hub();
+        puerto[2]=new Hub();
+        ocupado=new boolean[3];
     }
-    void apilarContenedor(Contenedor c1){
-        String resultado;
-        resultado=puerto[0].apilar(c1);
-        for (int i=1;i<puerto.length;i++){
+    boolean apilarContenedor(Contenedor c1){
+        boolean resultado=false;
+        for (int i=0;i<puerto.length;i++){
 
-            if (resultado==null){
-                resultado=puerto[i].apilar(c1);
-            }
+            resultado=puerto[i].apilar(c1);
+            if (resultado==true) break;
+
         }
-        if (resultado==null){
-            System.out.println("No hay espacio en el puerto");
-        }
+        return resultado;
     }
+
+    //Desapilar que devuelva contenedor desapilado
+    //CUantos por pais para todo el puerto
 }
