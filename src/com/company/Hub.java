@@ -5,7 +5,7 @@ public class Hub {
     public Hub(){
         posiciones= new Contenedor[10][12];
     }
-    @Override public String toString(){
+    public String mostrar(){
         String resultado="El Hub:\n";
         for (int i=0;i<posiciones.length;i++){
             for (int e=0;e<posiciones[0].length;e++){
@@ -59,10 +59,6 @@ public class Hub {
             }
         }
         return null;
-    }
-    void mostrar(Contenedor c1){
-        //Matriz con saltos de linea y uniones de string que muestre lasposiciones vacias y llenas del Hub
-
     }
 
     int cantidadPais(String pais) {

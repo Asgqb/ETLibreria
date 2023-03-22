@@ -2,8 +2,8 @@ package com.company;
 
 public class Puerto {
     boolean[] ocupado;
-    Hub[] puerto;
-    Puerto(){
+    public Hub[] puerto;
+    public Puerto(){
         puerto=new Hub[3];
         puerto[0]=new Hub();
         puerto[1]=new Hub();
