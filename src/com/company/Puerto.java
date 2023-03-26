@@ -10,7 +10,7 @@ public class Puerto {
         puerto[2]=new Hub();
         ocupado=new boolean[3];
     }
-    boolean apilarContenedor(Contenedor c1){
+    public boolean apilarPuerto(Contenedor c1){
         boolean resultado=false;
         for (int i=0;i<puerto.length;i++){
 
@@ -21,6 +21,21 @@ public class Puerto {
         return resultado;
     }
 
-    //Desapilar que devuelva contenedor desapilado
-    //CUantos por pais para todo el puerto
+    public Contenedor desapilarPuerto(int columna){
+        Contenedor desapilado;
+        for (int i=puerto.length-1;i>-1;i--){
+            desapilado=puerto[i].desapilar(columna);
+            if (desapilado != null) return desapilado;
+        }
+        return null;
+    }
+
+    public int cantidadPaisPuerto(String pais){
+        int numero=0;
+        for (int i=0;i<puerto.length;i++){
+            numero=numero+puerto[i].cantidadPais(pais);
+        }
+        return numero;
+    }
+
 }

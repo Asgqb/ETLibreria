@@ -8,7 +8,7 @@ public class Main {
         Contenedor c3=new Contenedor(12,5,"España",true,1,"Botellas","Pepe S.L","Jugetes SA");
         Puerto p1=new Puerto();
 
-        p1.puerto[0].apilar(c1);
+        p1.puerto[0].apilar(c1);  //Probar apilar para el puerto
         p1.puerto[0].apilar(c1);
         p1.puerto[0].apilar(c2);
         p1.puerto[0].apilar(c3);

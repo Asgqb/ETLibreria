@@ -48,7 +48,7 @@ public class Hub {
         return noesta;
     }
 
-    Contenedor desapilar(int columna) {
+    public Contenedor desapilar(int columna) {
         for (int i = 0; i < posiciones.length; i++) {
             if (posiciones[i][columna - 1] != null) {
                 {
@@ -61,7 +61,7 @@ public class Hub {
         return null;
     }
 
-    int cantidadPais(String pais) {
+    public int cantidadPais(String pais) {
         int pais2=0;
         for (int i = 0; i < posiciones.length; i++) {
             for (int e = 0; e < posiciones[0].length; e++) {
