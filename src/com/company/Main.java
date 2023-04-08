@@ -23,6 +23,9 @@ public class Main {
         System.out.println(p1.puerto[0].cantidadPais("España"));
         System.out.println(p1.cantidadPaisPuerto("España"));
 
+        StringBuilder bs1;
+
+
 
 
     }

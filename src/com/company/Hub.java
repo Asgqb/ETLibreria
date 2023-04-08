@@ -74,4 +74,18 @@ public class Hub {
         }
         return pais2;
     }
+    public int getid(int fila,int columna){
+        int id=posiciones[fila][columna].getId();
+        return id;
+    }
+    public Contenedor getContenedor(int fila,int columna){
+        Contenedor c=posiciones[fila][columna];
+        return c;
+    }
+    public boolean vacio(int fila, int columna){
+        boolean vacio2=false;
+        if (posiciones[fila][columna]==null){vacio2=true;}
+        return vacio2;
+
+    }
 }
