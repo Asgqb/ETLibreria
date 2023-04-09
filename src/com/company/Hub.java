@@ -76,8 +76,12 @@ public class Hub {
     }
 
 
-
+    /*Los siguientes 4 metodos están hechos porque posiciones es privada y no se puede usar directamente,
+    para obtener algún atributo de un contenedor en la matriz(con gets, ya que también son privados sus atributos)
+    o un contenedor directamente, llamamos a metodos de Hub
+    */
     public int getid(int fila,int columna){
+
         int id=posiciones[fila][columna].getId();
         return id;
     }
