@@ -9,7 +9,7 @@ public class Hub {
         String resultado="El Hub:\n";
         for (int i=0;i<posiciones.length;i++){
             for (int e=0;e<posiciones[0].length;e++){
-                if (posiciones[i][e]==null) {resultado=resultado+("[vacío] ");}
+                if (posiciones[i][e]==null) {resultado=resultado+("[0] ");}
                 else {resultado=resultado+("["+posiciones[i][e].id+"] ");}
             }
             resultado=resultado+"\n"; //\n para que un String salte de linea
