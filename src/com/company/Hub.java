@@ -74,6 +74,9 @@ public class Hub {
         }
         return pais2;
     }
+
+
+
     public int getid(int fila,int columna){
         int id=posiciones[fila][columna].getId();
         return id;
@@ -87,5 +90,9 @@ public class Hub {
         if (posiciones[fila][columna]==null){vacio2=true;}
         return vacio2;
 
+    }
+    public String pais(int fila, int columna){
+        String pais=posiciones[fila][columna].getPais();
+        return pais;
     }
 }
