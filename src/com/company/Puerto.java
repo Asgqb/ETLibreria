@@ -1,6 +1,8 @@
 package com.company;
 
-public class Puerto {
+import java.io.*;
+
+public class Puerto implements Serializable{
     boolean[] ocupado;
     public Hub[] puerto;
     public Puerto(){
@@ -38,4 +40,48 @@ public class Puerto {
         return numero;
     }
 
+
+
+    public static void guardarPuerto(Puerto puerto) {
+        try {
+            FileOutputStream fileOut = new FileOutputStream("puerto.ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(puerto);
+            out.close();
+            fileOut.close();
+            System.out.println("El objeto Puerto se ha guardado en puerto.ser");
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
+    }
+
+    public static Puerto cargarPuerto() {
+        Puerto puerto = null;
+        try {
+            FileInputStream fileIn = new FileInputStream("puerto.ser");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            puerto = (Puerto) in.readObject();
+            in.close();
+            fileIn.close();
+            System.out.println("Se ha cargado el objeto Puerto desde puerto.ser");
+        } catch (IOException i) {
+            // Si no se puede leer el archivo, se crea un nuevo objeto Puerto
+            System.out.println("No se pudo cargar el objeto Puerto desde puerto.ser, se creará uno nuevo.");
+            puerto = new Puerto();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Clase Puerto no encontrada");
+            c.printStackTrace();
+        }
+        return puerto;
+    }
+
+    private void writeObject(ObjectOutputStream out) throws IOException {
+        out.defaultWriteObject();
+    }
+
+    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
+        in.defaultReadObject();
+    }
 }
+
+

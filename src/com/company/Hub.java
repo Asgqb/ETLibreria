@@ -1,6 +1,9 @@
 package com.company;
 
-public class Hub {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class Hub implements Serializable {
     private Contenedor[][] posiciones;
     public Hub(){
         posiciones= new Contenedor[10][12];

@@ -1,6 +1,8 @@
 package com.company;
 
-public class Contenedor {
+import java.io.Serializable;
+
+public class Contenedor implements Serializable {
     int id;
     int peso;
     String pais;
