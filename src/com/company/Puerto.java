@@ -50,7 +50,7 @@ public class Puerto implements Serializable{
             out.close();
             fileOut.close();
             System.out.println("El objeto Puerto se ha guardado en puerto.ser");
-        } catch (IOException i) {
+        } catch (Exception i) {
             i.printStackTrace();
         }
     }
@@ -64,22 +64,12 @@ public class Puerto implements Serializable{
             in.close();
             fileIn.close();
             System.out.println("Se ha cargado el objeto Puerto desde puerto.ser");
-        } catch (IOException i) {
+        } catch (Exception i) {
             // Si no se puede leer el archivo, se crea un nuevo objeto Puerto
             System.out.println("No se pudo cargar el objeto Puerto desde puerto.ser, se creará uno nuevo.");
             puerto = new Puerto();
-        } catch (ClassNotFoundException c) {
-            c.printStackTrace();
         }
         return puerto;
-    }
-
-    private void writeObject(ObjectOutputStream out) throws IOException {
-        out.defaultWriteObject();
-    }
-
-    private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-        in.defaultReadObject();
     }
 }
 
