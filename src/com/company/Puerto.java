@@ -69,7 +69,6 @@ public class Puerto implements Serializable{
             System.out.println("No se pudo cargar el objeto Puerto desde puerto.ser, se creará uno nuevo.");
             puerto = new Puerto();
         } catch (ClassNotFoundException c) {
-            System.out.println("Clase Puerto no encontrada");
             c.printStackTrace();
         }
         return puerto;
