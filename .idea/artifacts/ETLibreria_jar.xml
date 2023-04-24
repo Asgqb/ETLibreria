@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ETLibreria:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ETLibreria_jar</output-path>
+    <root id="archive" name="ETLibreria.jar">
+      <element id="module-output" name="ETLibreria" />
+    </root>
+  </artifact>
+</component>
