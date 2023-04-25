@@ -74,13 +74,7 @@ public class Puerto implements Serializable{
 
     public String PesoHub(int peso,int hub){
         Contenedor c; int peso2; String resultado;
-        for(int i=1;i<11;i++){
-            for(int e=1;e<13;e++){
-                c = puerto[hub].getContenedor(i,e);
-                peso2=c.getPeso();
-                if (peso2==peso || peso2>peso){puerto[hub].setInspeccionado(i,e);}
-            }
-        }
+        puerto[hub].revisarPeso(peso);
         resultado=puerto[hub].mostrarPeso(peso);
         return resultado;
     }

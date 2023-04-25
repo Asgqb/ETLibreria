@@ -109,12 +109,27 @@ public class Hub implements Serializable {
 
     public String mostrarPeso(int peso){
         String resultado="El Hub:\n";
+        String inspeccionado="Está inspeccionado";
         for (int i=0;i<posiciones.length;i++){
             for (int e=0;e<posiciones[0].length;e++){
-                if (posiciones[i][e].getPeso()>peso || posiciones[i][e].getPeso()==peso){resultado=resultado+(posiciones[i][e].id+" "+posiciones[i][e].empresaremitente+" "+posiciones[i][e].peso+" "+posiciones[i][e].inspeccionado+"\n");}
+                if (posiciones[i][e]!=null && (posiciones[i][e].getPeso()>peso || posiciones[i][e].getPeso()==peso)){resultado=resultado+("id:"+posiciones[i][e].id+" empresa remitente:"+posiciones[i][e].empresaremitente+" peso:"+posiciones[i][e].peso+" inspeccionado:"+inspeccionado+"\n");}
             }
 
         }
         return resultado;
+    }
+    public void revisarPeso(int peso){
+        for(int i=0;i<10;i++){
+            for(int e=0;e<12;e++){
+                if (posiciones[i][e]!=null) {
+                    int peso2;
+                    Contenedor c = this.getContenedor(i, e);
+                    peso2 = c.getPeso();
+                    if (peso2 == peso || peso2 > peso) {
+                        this.setInspeccionado(i, e);
+                    }
+                }
+            }
+        }
     }
 }
