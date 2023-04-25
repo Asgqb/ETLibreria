@@ -2,7 +2,7 @@ package com.company;
 
 import java.io.Serial;
 import java.io.Serializable;
-
+//Agel saura
 public class Hub implements Serializable {
     private Contenedor[][] posiciones;
     public Hub(){

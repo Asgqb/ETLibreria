@@ -1,7 +1,7 @@
 package com.company;
 
 import java.io.Serializable;
-
+//Angel saura
 public class Contenedor implements Serializable {
     int id;
     int peso;

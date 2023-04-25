@@ -1,7 +1,7 @@
 package com.company;
 
 import java.io.*;
-
+//Angel saura
 public class Puerto implements Serializable{
     boolean[] ocupado;
     public Hub[] puerto;
