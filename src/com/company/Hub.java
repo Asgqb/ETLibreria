@@ -102,4 +102,19 @@ public class Hub implements Serializable {
         String pais=posiciones[fila][columna].getPais();
         return pais;
     }
+
+    public void setInspeccionado(int fila,int columna){
+        posiciones[fila][columna].setInspeccionado(true);
+    }
+
+    public String mostrarPeso(int peso){
+        String resultado="El Hub:\n";
+        for (int i=0;i<posiciones.length;i++){
+            for (int e=0;e<posiciones[0].length;e++){
+                if (posiciones[i][e].getPeso()>peso || posiciones[i][e].getPeso()==peso){resultado=resultado+(posiciones[i][e].id+" "+posiciones[i][e].empresaremitente+" "+posiciones[i][e].peso+" "+posiciones[i][e].inspeccionado+"\n");}
+            }
+
+        }
+        return resultado;
+    }
 }

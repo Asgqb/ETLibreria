@@ -65,11 +65,24 @@ public class Puerto implements Serializable{
             fileIn.close();
             System.out.println("Se ha cargado el objeto Puerto desde puerto.ser");
         } catch (Exception i) {
-            // Si no se puede leer el archivo, se crea un nuevo objeto Puerto
+            // Si no se puiede leer el archivo, se crea un nuevo objeto Puerto
             System.out.println("No se pudo cargar el objeto Puerto desde puerto.ser, se creará uno nuevo.");
             puerto = new Puerto();
         }
         return puerto;
+    }
+
+    public String PesoHub(int peso,int hub){
+        Contenedor c; int peso2; String resultado;
+        for(int i=1;i<11;i++){
+            for(int e=1;e<13;e++){
+                c = puerto[hub].getContenedor(i,e);
+                peso2=c.getPeso();
+                if (peso2==peso || peso2>peso){puerto[hub].setInspeccionado(i,e);}
+            }
+        }
+        resultado=puerto[hub].mostrarPeso(peso);
+        return resultado;
     }
 }
 
